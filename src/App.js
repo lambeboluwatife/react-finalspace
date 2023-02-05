@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Characters from "./components/Characters";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import Showcase from "./components/Showcase";
+import { useState } from "react";
+import SearchResult from "./components/SearchResults";
 
-function App() {
+const App = () => {
+  const [results, setResults] = useState([]);
+
+  const addResult = (result) => {
+    setResults([...results, result]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Showcase />
+      <Characters />
+      <Search onAdd={addResult} />
+      <SearchResult results={results} />
     </div>
   );
-}
+};
 
 export default App;
