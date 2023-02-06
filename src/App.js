@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import Showcase from "./components/Showcase";
 import { useState } from "react";
-import SearchResult from "./components/SearchResults";
+import SearchResults from "./components/SearchResults";
 
 const App = () => {
   const [results, setResults] = useState([]);
@@ -18,7 +18,7 @@ const App = () => {
       <Showcase />
       <Characters />
       <Search onAdd={addResult} />
-      <SearchResult results={results} />
+      <SearchResults results={results} />
     </div>
   );
 };
