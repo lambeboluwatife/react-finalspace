@@ -1,13 +1,15 @@
-import SearchResult from "./SearchResult";
+import SearchResult from './SearchResult';
 
 const SearchResults = ({ results }) => {
-  return (
-    <>
-      {results.map((result, index) => (
-        <SearchResult key={index} result={result} />
-      ))}
-    </>
-  );
+	return (
+		<>
+			{results.map((result) => (
+				<div key={result.id}>
+					<SearchResult result={result} />
+				</div>
+			))}
+		</>
+	);
 };
 
 export default SearchResults;
